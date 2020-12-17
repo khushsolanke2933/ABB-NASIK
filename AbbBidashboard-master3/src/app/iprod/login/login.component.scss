@@ -1,0 +1,32 @@
+@import '../../@theme/styles/themes';
+@import '~@nebular/theme/styles/global/breakpoints';
+@import '~bootstrap/scss/mixins/breakpoints';
+@include nb-install-component(){
+.position{
+  width: 30%;
+  height: 100%;
+  margin-left: 35%;
+  margin-top: 20px;
+font-size: 25px;
+font-weight: bold;
+}
+.h4{
+  padding-top: 5%;
+}
+.info {
+  font-size: 15px;
+  font-weight: bold;
+  padding-left: 5%;
+  width: 300px;
+}
+.wrapper {
+text-align: center;
+}
+.text {
+  padding-left: 5%; ;
+  font-size: 15px;
+  font-weight: bold;
+  display: inline-block;
+  width: 380px;
+}
+}

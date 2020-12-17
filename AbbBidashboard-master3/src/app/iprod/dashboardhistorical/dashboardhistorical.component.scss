@@ -1,0 +1,243 @@
+.breadcrumbClass{
+  text-align: left;
+  padding: 0;
+  margin: 0;
+}
+
+.historicalBreadcrumb{
+  display: inline;
+  //width: 100%;
+}
+
+.datepicker{
+  float: right;  
+  //display: inline-block;  
+}
+
+.historical_graph{
+  padding: 0;
+  margin: 0;
+
+}
+
+// div{
+//   display: inline-block;
+// }
+
+.box-body{
+  background-color: white;
+  box-shadow: 1px 1px 3px 3px #ccc;
+  height: auto;
+  margin: 5px;
+  //display: inline-block;
+}
+
+.main-class{
+  margin: 5px; 
+  float: left; 
+  padding: 0;
+  width: 57%;
+  background-color: white;
+  //display: inline-block;
+}
+
+.sub-class{
+  float: right;
+  margin: 5px;
+  padding: 0;
+  width: 19.5%;
+  background-color: white;
+  //display: inline-block;
+}
+
+.sub-class-1{
+  margin-top: 5px;
+  margin-left: auto;
+  margin-right: 20px;
+  float: right;
+  padding: 0;
+  width: 19.5%;
+  background-color: white;
+  //display: inline-block;
+}
+
+.svg-item {
+ 
+  font-size: 16px;
+ 
+}
+
+
+@keyframes donutfade {
+/* this applies to the whole svg item wrapper */
+  0% {
+      opacity: .2;
+  }
+  100% {
+      opacity: 1;
+  }
+}
+
+@media (min-width: 992px) {
+  .svg-item {
+      width: 80%;
+  }
+}
+
+.donut-ring {
+  //stroke: #EBEBEB;
+  stroke: #666666;
+}
+
+.donut-segment {
+  transform-origin: center;
+  stroke: #FF6200;
+}
+
+.donut-segment-2 {
+  stroke: #FF0000;
+  animation: donut1 3s;
+}
+
+.donut-segment-3 {
+  stroke: #d9e021;
+  animation: donut2 3s;
+}
+
+.donut-segment-4 {
+  stroke: #ed1e79;
+  animation: donut3 3s;
+}
+
+.segment-1{fill:#ccc;}
+.segment-2{fill:darkblue;}
+.segment-3{fill:#d9e021;}
+.segment-4{fill:#ed1e79;}
+
+.donut-percent {
+  animation: donutfadelong 1s;
+}
+
+@keyframes donutfadelong {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+  }
+}
+
+@keyframes donut1 {
+  0% {
+      stroke-dasharray: 0, 100;
+  }
+  100% {
+      stroke-dasharray: 69, 31;
+  }
+}
+
+@keyframes donut2 {
+  0% {
+      stroke-dasharray: 0, 100;
+  }
+  100% {
+      stroke-dasharray: 30, 70;
+  }
+}
+
+@keyframes donut3{
+  0% {
+      stroke-dasharray: 0, 100;
+  }
+  100% {
+      stroke-dasharray: 1, 99;
+  }
+}
+
+.donut-text {
+  font-family: Arial, Helvetica, sans-serif;
+  fill: #FF6200;
+}
+.donut-text-1 {
+  //fill: rgb(0, 0, 139);
+   fill: rgb(255, 0, 15);
+}
+.donut-text-2 {
+  fill: #d9e021;
+}
+.donut-text-3 {
+  fill: #ed1e79;
+}
+
+.donut-label {
+  font-size: 0.28em;
+  font-weight: 700;
+  line-height: 1;
+  fill: #000;
+  transform: translateY(0.25em);
+}
+
+.donut-percent {
+  font-size: 0.5em;
+  line-height: 1;
+  transform: translateY(0.5em);
+  font-weight: bold;
+}
+
+.donut-data {
+  font-size: 0.12em;
+  line-height: 1;
+  transform: translateY(0.5em);
+  text-align: center;
+  text-anchor: middle;
+  color:#666;
+  fill: #666;
+  animation: donutfadelong 1s;
+}
+
+
+
+
+/* ---------- */
+/* just for this presentation */
+html { text-align:left; }
+.svg-item {
+max-width:25%;
+//@function: 5px;
+display:inline-block;
+vertical-align: bottom;
+}
+.svg-item-1 {
+  max-width:25%;
+  text-align: right;
+  display:inline-block;
+  vertical-align: bottom;
+  }
+  
+.svg-item-2 {
+  //max-width:25%;
+  display:inline-block;
+  text-align: center;
+  vertical-align: bottom;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  table, th , td  {
+    border: 1px solid white;
+    border-collapse: collapse;
+    padding: 5px;
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  th{
+    background-color: #282627;
+    color: white;
+    font-family: sans-serif;
+    font-weight: lighter;
+    font-size: 12px;
+  }
+

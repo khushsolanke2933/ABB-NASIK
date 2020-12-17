@@ -1,0 +1,104 @@
+<nb-card>
+  <nb-card-header>
+    <div class="row">
+      <div class="col-sm-8">
+        <h4>Short Report</h4>
+      </div>
+    </div>
+    <br>
+    <div>
+      <nb-tabset fullWidth>
+        <nb-tab tabTitle="Search By Date Range">
+          <form [formGroup]="registerForm" #dateForm="ngForm">       
+            <input style="margin-right: 1rem;" nbInput placeholder="From Date" [nbDatepicker]="fromDate" formControlName="fromDate">
+            <nb-datepicker #fromDate></nb-datepicker>
+    
+            <input style="margin-right: 1rem;" nbInput placeholder="To Date" [nbDatepicker]="toDate" formControlName="toDate">
+            <nb-datepicker #toDate></nb-datepicker>
+    
+            <button [disabled]="!dateForm.valid" nbButton status="primary" size="small" (click)="submitDateFilter()">Search</button>
+          </form> 
+        </nb-tab>
+        <nb-tab tabTitle="Search By Serial Number">
+          <form [formGroup]="srForm" #srFrom="ngForm">       
+            <input style="margin-right: 1rem;" type="text" formControlName="serialNumber" nbInput placeholder="Serial Number">   
+            <button [disabled]="!srFrom.valid" nbButton status="primary" size="small" (click)="submitSrSearch()">Search</button>
+          </form> 
+        </nb-tab>
+      </nb-tabset> 
+    </div> 
+  </nb-card-header>
+  <nb-card-body>
+    <div class=" text-nowrap text-basic">
+      <!--Table-->
+      <table class="table-responsive table table-striped">
+        <!--Table head-->   
+          <div>                                
+            <thead>
+              <tr >                                                                          
+                <th style="vertical-align : middle; text-align:center;" rowspan="2">#</th>
+                <th style="width: 8rem; vertical-align : middle; text-align:center;" rowspan="2" >Serial Number</th>                                                       
+                <th style="vertical-align : middle; text-align:center;" *ngFor="let machineParam of machineParameterMap | keyvalue">{{machineParam.value[0].machine.machineName}}  
+                  <table>                                                                                                                    
+                    <th style="min-width: 5.4rem;">Result</th>
+                    <ng-container *ngFor="let parameter of machineParam.value">
+                    <th [ngStyle]="{'min-width.em':getLength(parameter.parameter)}" >{{parameter.parameter}}</th>
+                  </ng-container>  
+                  </table>        
+               </th>                                                                                                                               
+              </tr>
+            </thead>                
+          </div>
+       
+        <!--Table head-->
+
+        <!--Table body-->
+      
+         <div  *ngFor="let obj of reportDataMap ; let ndx = index">   
+           <tbody>
+             <tr>
+              <td style="vertical-align : middle; text-align:center;" >{{ndx+1}}</td>
+              <td style="width: 8.4rem; text-align:center; vertical-align: middle;"  >{{obj.serialNumber}}</td>  
+              <td>
+                <tbody *ngFor="let res of obj.attemptsMap | keyvalue ">
+                  <tr *ngFor="let result of res.value | keyvalue " >                                                                                          
+                        <td *ngFor="let result1 of result.value | keyvalue">     
+                          <table >   
+                                              
+                              <td style="min-width: 5.4rem;"  *ngIf="result1.value[0].status ;then statusAvail; else statusUnAvail">
+                                {{result1.value[0].status.statusDesc}}        
+                              </td>
+                              
+                              <ng-template #statusAvail>
+                                <td style="min-width: 5.4rem;" *ngIf="result1.value[0].status.statusDesc === 'Serial Number Pass' ; else fail">Pass</td>
+                            </ng-template>
+                              
+                              <ng-template #fail>
+                                <td style="min-width: 5.4rem;" >Fail</td>
+                              </ng-template>
+                              
+                              <ng-template #statusUnAvail>
+                              <td style="min-width: 5.4rem;">N/A</td>
+                              </ng-template>
+
+                             <ng-container *ngFor="let val of result1.value">
+                                <td [ngStyle]="{'min-width.em':val.machineParameter.parameter.length}" >                                                                                                            
+                                    {{val.daqResult}}                                                                                      
+                                </td> 
+                                </ng-container> 
+                          </table>      
+                        </td> 
+                   </tr>
+                  </tbody>  
+              </td>
+             </tr>
+           </tbody>                			       
+                     
+            </div>
+       
+        <!--Table body-->
+      </table>
+      <!--Table-->
+    </div>
+  </nb-card-body>
+</nb-card>

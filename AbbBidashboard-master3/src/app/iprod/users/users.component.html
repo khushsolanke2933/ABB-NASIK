@@ -1,0 +1,59 @@
+<nb-card>
+  <nb-card-header>
+    <div class="row">
+      <div class="col-sm-8">
+        <h4>Users</h4>
+      </div>
+      <div class="text-right col-sm-4">
+        <button nbButton (click)="addUser()" hero type="button" size="small" status="primary"><i class="fa fa-user-plus"
+            aria-hidden="true"></i>&nbsp;ADD USER</button>
+      </div>
+    </div>
+  </nb-card-header>
+  <nb-card-body>
+    <div class="table-responsive text-nowrap text-basic">
+      <!--Table-->
+
+
+      <table class="table table-striped">
+
+        <!--Table head-->
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>User Name</th>
+            <th>Name</th>
+            <th>Gender</th>
+            <th>Email Id</th>
+            <th>Contact No</th>
+            <th colspan="2">Actions</th>
+          </tr>
+        </thead>
+        <!--Table head-->
+
+        <!--Table body-->
+        <tbody>
+          <tr *ngFor="let user of allUsers; let ndx = index">
+            <td>{{ndx+1}}</td>
+            <td>{{user.userName}}</td>
+            <td>{{ user.firstName }} {{ user.lastName }}</td>
+            <td>{{user.gender}} </td>
+            <td>{{user.emailId}}</td>
+            <td>{{user.contactNo}}</td>
+            <td>
+              <button nbButton (click)="forgotPswd(user)" hero size="tiny"><i class="fas fa-key"></i></button>&nbsp;
+              <button nbButton (click)="editUser(user)" hero status="success" size="tiny"><i
+                  class="fas fa-user-edit"></i>&nbsp; Edit</button>&nbsp;
+              <button nbButton (click)="deleteUser(user.userId,ndx)" hero status="danger" size="tiny"><i
+                  class="fas fa-user-times"></i>&nbsp; Delete</button>
+            </td>
+          </tr>
+        </tbody>
+        <!--Table body-->
+
+
+      </table>
+      <!--Table-->
+    </div>
+  </nb-card-body>
+</nb-card>

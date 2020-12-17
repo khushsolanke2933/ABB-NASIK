@@ -1,0 +1,33 @@
+<nb-card>
+    <nb-card-header>OEE Details</nb-card-header>
+    <nb-card-body>
+        <div class="row">
+            <div class="col-md-12">
+                <table>
+                    <thead class="black white-text">
+                        <tr>
+                            <th *ngFor="let head1 of headElements1" scope="col">{{head1}} </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let el1 of elements1">
+                            <td scope="row">{{el1.Unit}}</td>
+                            <td>{{el1.Line}}</td>
+                            <td>{{el1.Planned}}</td>
+                            <td>{{el1.Actuals}}</td>
+                            <td>{{el1.Production}}</td>
+                            <td>{{el1.FPY}}</td>
+                            <td>{{el1.Uptime}}</td>
+                            <td>{{el1.Downtime}}</td>
+                            <td>{{el1.Losstime}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </nb-card-body>
+    <nb-card-footer>
+
+    </nb-card-footer>
+</nb-card>

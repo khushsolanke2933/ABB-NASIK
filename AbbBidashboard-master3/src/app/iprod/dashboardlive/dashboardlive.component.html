@@ -1,0 +1,59 @@
+<nb-card>
+  <nb-card-header>
+    <div class="row">
+
+      <div class="col-md-9">
+        <b style="color: red;">&mdash;</b><br> <b>
+          DASHBOARD <b style="color: red;">.Live</b></b>
+      </div>
+
+    </div>
+  </nb-card-header>
+</nb-card>
+
+<div #gridStackContainer class="grid-stack" data-gs-width="12" data-gs-animate="yes">
+  <ng-container *ngFor="let widget of widgets">
+    <app-widget data-gs-no-resize="false" [positionX]="widget.positionX" [positionY]="widget.positionY"
+      [width]="widget.width" [height]="widget.height">
+
+      <!-- <canvas id="{{ widget.id }}">{{ widget.id }}</canvas>
+          <div class="highcharts-figure" [id]="widget.id"></div> -->
+
+      <div id={{widget.id}}>
+        <!--this id check on loaded compo. that id is avai or not and load graph-->
+
+        <div data-ng-if="id === 'container8'">
+          <ngx-plannedactual></ngx-plannedactual>
+        </div>
+      </div>
+      <!-- <div data-ng-if="id === 'container2'">
+          p
+          <app-fpy></app-fpy>
+        </div>
+        <div data-ng-if="id === 'container3'">
+          p
+          <app-productivity></app-productivity>
+        </div>
+      </div>  
+        
+        <app-oee></app-oee>
+        
+        
+        <app-capacity-utilization></app-capacity-utilization>
+        <app-unplanned-downtime></app-unplanned-downtime>
+        <app-planned-downtime></app-planned-downtime> -->
+
+      <!-- <a href="http://www.google.com"><app-oee></app-oee></a>      for link clik define-->
+      <app-oee (click)="addOee()"></app-oee>
+      <app-fpy (click)="addFpy()"></app-fpy>
+      <app-capacityutilization></app-capacityutilization>
+      <app-productivity></app-productivity>
+      <!-- <app-planneddowntime></app-planneddowntime> -->
+      <app-unplanneddowntime></app-unplanneddowntime>
+      <div style="text-align: center;"><span><b>{{ widget.content }} </b></span></div>
+    </app-widget>
+    <!-- <div id="{{widget.id}}"></div> -->
+  </ng-container>
+  <ng-content></ng-content>
+</div>
+<!-- <div style="display:none" id="container"></div> -->

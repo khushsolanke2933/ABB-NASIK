@@ -1,0 +1,62 @@
+<nb-card>
+    <!-- <nb-card-header>Selected Option: {{ option }}</nb-card-header> -->
+    <nb-card-header>
+        <div class="row">
+
+            <div class="col-md-9">
+                <b style="color: red;">&mdash;</b><br> <b>
+                    DASHBOARD <b>Consolidated</b></b>
+            </div>
+
+        </div>
+    </nb-card-header>
+</nb-card>
+
+<nb-card>
+    <nb-card-body>
+        <table>
+            <thead class="black white-text">
+                <tr>
+                    <th *ngFor="let head of headElements" scope="col">{{head}} </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let el of elements">
+                    <td scope="row">{{el.Unit}}</td>
+                    <td>{{el.Line}}</td>
+                    <td>{{el.OEE}}</td>
+                    <td>{{el.Availability}}</td>
+                    <td>{{el.Performance}}</td>
+                    <td>{{el.Quantity}}</td>
+                    <td>
+                        <span class="control-button update-button" title="Edit" data-toggle="modal" data-ng-click=""
+                            data-target="#editOperatorSkill">
+                            <i class="fas fa-search-alt"></i>
+                        </span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table>
+            <thead class="black white-text">
+                <tr>
+                    <th *ngFor="let head1 of headElements1" scope="col">{{head1}} </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let el1 of elements1">
+                    <td scope="row">{{el1.Unit}}</td>
+                    <td>{{el1.Line}}</td>
+                    <td>{{el1.Planned}}</td>
+                    <td>{{el1.Actuals}}</td>
+                    <td>{{el1.Production}}</td>
+                    <td>{{el1.FPY}}</td>
+                    <td>{{el1.Uptime}}</td>
+                    <td>{{el1.Downtime}}</td>
+                    <td>{{el1.Losstime}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </nb-card-body>
+</nb-card>

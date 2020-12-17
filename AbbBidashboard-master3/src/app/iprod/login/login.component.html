@@ -1,0 +1,39 @@
+
+<div class="position">
+<nb-card >
+  <nb-card-header>
+ <h4 style="text-align: center;">Login</h4>
+</nb-card-header>
+<br>
+  <form [formGroup]="loginform" #form="ngForm" (ngSubmit)="checkLogin()">
+    <div class="form-group">
+     <!-- <nb-icon  icon="person" ></nb-icon>&nbsp;-->
+        <div class="text">
+        <input  type="text"  nbInput fullWidth placeholder="Enter User Name" formControlName="username" class="form-control"
+        [ngClass]="{ 'is-invalid': submitted && f.username.errors}">
+      </div>
+  </div>
+  <div class="form-group">
+ <!--<i class="fas fa-key"></i>-->
+    <div class="text">
+    <input nbInput  type="password"  fullWidth placeholder="Enter Password" formControlName="password" class="form-control"
+      [ngClass]="{ 'is-invalid': submitted && f.password.errors}">
+  </div>
+  </div>
+<br>
+<nb-card-footer>
+  <div class="form-group">
+    <div class="wrapper">
+    <button nbButton class="btn-btn-primary" hero status="success" size="medium" >
+      Login
+    </button>
+    </div>
+  </div>
+</nb-card-footer>
+
+</form>
+</nb-card>
+</div>
+
+
+

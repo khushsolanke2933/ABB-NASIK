@@ -1,0 +1,82 @@
+<nb-card>
+    <!-- <nb-card-header>Selected Option: {{ option }}</nb-card-header> -->
+    <nb-card-header>
+        <div class="row">
+
+            <div class="col-md-9">
+                <b style="color: red;">&mdash;</b><br> <b>
+                    Customer <b>Feedback</b></b>
+            </div>
+
+        </div>
+    </nb-card-header>
+</nb-card>
+<nb-card>
+    <nb-card-body>
+        <form>
+            <table>
+                <tr>
+                    <td align="left">
+                        <h6> Visitor's Usename: </h6>
+                    </td>
+                    <td align="left"><input type="text" name="first" /></td>
+                </tr>
+                <br>
+                <tr style="padding-top: 50px;">
+                    <td align="left">
+                        <h6> Visitor's Email:</h6>
+                    </td>
+                    <td align="left"><input type="text" name="last" /></td>
+                </tr>
+            </table>
+        </form>
+        <br>
+
+        <h6>Q1.Which of the following words would you use to describe our product?</h6>
+        <nb-radio-group [(ngModel)]="option">
+            <nb-radio *ngFor="let option of options" [value]="option.value">
+                {{ option.label }}
+            </nb-radio>
+        </nb-radio-group>
+        <h6>Q2.How well does our product meet your needs?</h6>
+        <nb-radio-group [(ngModel)]="option1">
+            <nb-radio *ngFor="let option1 of options1" [value]="option1.value">
+                {{ option1.label }}
+            </nb-radio>
+        </nb-radio-group>
+        <h6>Q3.How would you rate the value for money of the product?</h6>
+        <nb-radio-group [(ngModel)]="option1">
+            <nb-radio *ngFor="let option1 of options1" [value]="option1.value">
+                {{ option1.label }}
+            </nb-radio>
+        </nb-radio-group>
+        <h6>Q4.How easy is it to navigate our website?</h6>
+        <nb-radio-group [(ngModel)]="option1">
+            <nb-radio *ngFor="let option1 of options1" [value]="option1.value">
+                {{ option1.label }}
+            </nb-radio>
+        </nb-radio-group>
+        <h6>Q5.Were you able to find the information you were looking for on our website?</h6>
+        <nb-radio-group [(ngModel)]="option1">
+            <nb-radio *ngFor="let option1 of options1" [value]="option1.value">
+                {{ option1.label }}
+            </nb-radio>
+        </nb-radio-group><br>
+
+        <h6> Enter Remark:
+            <textarea style="width: 40%; vertical-align: top;" name="comment" placeholder="Comments...."
+                form="usrform"></textarea> </h6>
+        <nb-select placeholder="Select Frame" [(selected)]="selectedItem">
+            <nb-option value="0">CB</nb-option>
+            <nb-option value="1">OVR</nb-option>
+            <nb-option value="2">MA</nb-option>
+        </nb-select>
+        <button [disabled]="" nbButton status="primary" style="background-color:#151a30 ;" size="small">Click
+            photo</button>
+
+        <button [disabled]="" nbButton status="primary" style="background-color:#151a30 ; float: right;"
+            size="small">Submit
+            Feedback</button>
+
+    </nb-card-body>
+</nb-card>

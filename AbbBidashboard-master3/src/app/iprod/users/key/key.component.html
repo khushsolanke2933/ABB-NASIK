@@ -1,0 +1,40 @@
+<nb-card>
+  <nb-card-header>Password Update</nb-card-header>
+  <nb-card-body>
+      <div class="row">
+          <div class="col-md-12">
+            <form [formGroup]="registerForm" #form="ngForm" (ngSubmit)="onSubmit()">
+             <!-- </form> -->
+              <div class="form-group row">
+                <label for="newUserPassword" class="label col-sm-3 col-form-label">Enter New Password</label>
+                <div class="col-sm-9">
+                  <input type="password" name="newUserPassword" [class.is-invalid]="registerForm.get('newUserPassword').invalid && registerForm.get('newUserPassword').touched" 
+                    formControlName="newUserPassword" class="form-control" [(ngModel)]="user.newUserPassword"
+                    nbInput fullWidth id="password" placeholder="Enter New Password">
+                   <div *ngIf="registerForm.get('newUserPassword').invalid && registerForm.get('newUserPassword').touched">
+                    <div><small *ngIf="registerForm.get('newUserPassword').errors?.required" class="text-danger">New Password is required</small></div>
+                    <div><small *ngIf="!registerForm.hasError('minLength')" class="text-danger">Password must be atleast 8 characters</small></div>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="newUserPasswordConfirm" class="label col-sm-3 col-form-label">Reconfirm Password</label>
+                <div class="col-sm-9">
+                  <input type="password" name="newUserPasswordConfirm" [class.is-invalid]="registerForm.get('newUserPasswordConfirm').invalid && registerForm.get('newUserPasswordConfirm').touched" formControlName="newUserPasswordConfirm" class="form-control"
+                  nbInput fullWidth id="newUserPasswordConfirm" placeholder="Reconfirm Password">
+                  <div *ngIf="registerForm.get('newUserPasswordConfirm').invalid && registerForm.get('newUserPasswordConfirm').touched">
+                    <div><small *ngIf="registerForm.get('newUserPasswordConfirm').errors?.required" class="text-danger">Reconfirm password is required</small></div>
+                    <div><small *ngIf="registerForm.get('newUserPasswordConfirm').errors?.mustMatch" class="text-danger">Passwords must match</small></div>
+                  </div>
+                </div>
+              </div>
+              </form>
+          </div>
+      </div>
+
+  </nb-card-body>
+  <nb-card-footer>
+    <button class="cancel" nbButton status="danger" size="small" (click)="cancel()">Cancel</button>&nbsp;
+    <button [disabled]="!form.valid" nbButton status="success" size="small" (click)="submit()">Submit</button>
+  </nb-card-footer>
+</nb-card>

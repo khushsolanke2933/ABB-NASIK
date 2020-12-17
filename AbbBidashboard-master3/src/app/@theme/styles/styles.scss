@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap');
+
+// themes - our custom or/and out of the box themes
+@import 'themes';
+@import 'node_modules/@nebular/theme/styles/themes';
+
+// framework component themes (styles tied to theme variables)
+@import '~@nebular/theme/styles/globals';
+@import '~@nebular/auth/styles/all';
+
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/variables';
+@import '~bootstrap/scss/mixins';
+@import '~bootstrap/scss/grid';
+
+// loading progress bar theme
+@import './pace.theme';
+
+@import './layout';
+@import './overrides';
+
+// install the framework and custom global styles
+@include nb-install() {
+
+  // framework global styles
+  @include nb-theme-global();
+  @include nb-auth-global();
+
+  @include ngx-layout();
+  // loading progress bar
+  @include ngx-pace-theme();
+
+  @include nb-overrides();
+};
+
+@font-face {
+	font-family: 'ABBFontLit';
+	/* src: url('../abb-fonts/ABBvoiceArabic_Lt.ttf') format('truetype'); */
+  src:
+		url('/assets/fonts/abb-fonts/ABBvoiceArabic_Lt.ttf');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'ABBFontReg';
+	/* src: url('../abb-fonts/ABBvoiceArabic_Rg.ttf') format('truetype'); */
+	src:
+		url('/assets/fonts/abb-fonts/ABBvoice_Rg.ttf');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'ABBFontBld';
+	/* src: url('../abb-fonts/ABBvoiceArabic_Bd.ttf') format('truetype'); */
+	src:
+		url('/assets/fonts/abb-fonts/ABBvoiceArabic_Bd.ttf');
+	font-weight: bold;
+	font-style: normal;
+}
+
+.menu-sidebar {
+	background-color: #151a30!important;
+	color: #ffffff!important;
+  }
+  
+  .menu-title{
+	color:#ffffff!important;
+  }
+  
+  .menu-icon{
+	color:#ffffff!important;
+  }
+
+
+
+//   .nb-theme-default nb-layout .layout {
+
+// 	background-image: url('assets/images/camera1.jpg');
+// 	// background-color: black;
+// }
+

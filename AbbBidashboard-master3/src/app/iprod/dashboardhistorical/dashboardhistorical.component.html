@@ -1,0 +1,327 @@
+<nb-card>
+    <nb-card-header size="small">
+        <!-- <div class="row"> -->
+        <table class="breadcrumbClass">
+            <tr class="breadcrumbClass">
+                <td class="breadcrumbClass">
+                    <div class="historicalBreadcrumb">
+                        <b style="color: red;">&mdash;</b><br> <b>
+                            DASHBOARD <b>Historical</b></b>
+                    </div>
+                </td>
+                <td class="breadcrumbClass">
+                    <div class="datepicker">
+                        <table>
+                            <tr>
+                                <td>
+                                    <nb-select placeholder="Select Line" [(selected)]="selectedItem">
+                                        <nb-option value="">Select Line</nb-option>
+                                        <nb-option value="0">CB</nb-option>
+                                        <nb-option value="1">OVR</nb-option>
+                                        <nb-option value="2">MA</nb-option>
+                                    </nb-select>
+                                </td>
+                                <td> <input nbInput placeholder="Select Date" [nbDatepicker]="picker">
+                                    <nb-datepicker #picker [min]="min" [max]="max"></nb-datepicker>
+                                </td>
+                                <td><button [disabled]="" nbButton status="primary" size="small">Search</button></td>
+                            </tr>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+        </table>
+
+
+
+        <!-- </div> -->
+    </nb-card-header>
+</nb-card>
+
+<table class="historical_graph">
+    <tr>
+        <td class="box-body">
+
+            <div class="svg-item">
+                <svg width="95%" height="95%" viewBox="0 0 40 40" class="donut">
+                    <circle class="donut-hole" cx="20" cy="20" r="15.91549430918954" fill="#fff"></circle>
+                    <circle class="donut-ring" cx="20" cy="20" r="15.91549430918954" fill="transparent"
+                        stroke-width="3.5">
+                    </circle>
+                    <circle class="donut-segment donut-segment-2" cx="20" cy="20" r="15.91549430918954"
+                        fill="transparent" stroke-width="3.5" stroke-dasharray="69 31" stroke-dashoffset="25">
+                    </circle>
+                    <g class="donut-text donut-text-1">
+
+                        <text y="50%" transform="translate(0, 2)">
+                            <tspan x="50%" text-anchor="middle" class="donut-percent">90%</tspan>
+                        </text>
+                        <text y="60%" transform="translate(0, 2)">
+                            <tspan x="50%" text-anchor="middle" class="donut-data">OEE</tspan>
+                        </text>
+                    </g>
+                </svg>
+            </div>
+
+            <div class="svg-item-1">
+                <svg width="70%" height="70%" viewBox="0 0 40 40" class="donut">
+                    <circle class="donut-hole" cx="20" cy="20" r="15.91549430918954" fill="#fff"></circle>
+                    <circle class="donut-ring" cx="20" cy="20" r="15.91549430918954" fill="transparent"
+                        stroke-width="3.5">
+                    </circle>
+                    <circle class="donut-segment donut-segment-2" cx="20" cy="20" r="15.91549430918954"
+                        fill="transparent" stroke-width="3.5" stroke-dasharray="69 31" stroke-dashoffset="25">
+                    </circle>
+                    <g class="donut-text donut-text-1">
+
+                        <text y="50%" transform="translate(0, 2)">
+                            <tspan x="50%" text-anchor="middle" class="donut-percent">78%</tspan>
+                        </text>
+                        <text y="60%" transform="translate(0, 2)">
+                            <tspan x="50%" text-anchor="middle" class="donut-data">Availability</tspan>
+                        </text>
+                    </g>
+                </svg>
+            </div>
+
+            <div class="svg-item-1">
+                <svg width="70%" height="70%" viewBox="0 0 40 40" class="donut">
+                    <circle class="donut-hole" cx="20" cy="20" r="15.91549430918954" fill="#fff"></circle>
+                    <circle class="donut-ring" cx="20" cy="20" r="15.91549430918954" fill="transparent"
+                        stroke-width="3.5">
+                    </circle>
+                    <circle class="donut-segment donut-segment-2" cx="20" cy="20" r="15.91549430918954"
+                        fill="transparent" stroke-width="3.5" stroke-dasharray="69 31" stroke-dashoffset="25">
+                    </circle>
+                    <g class="donut-text donut-text-1">
+
+                        <text y="50%" transform="translate(0, 2)">
+                            <tspan x="50%" text-anchor="middle" class="donut-percent">70%</tspan>
+                        </text>
+                        <text y="60%" transform="translate(0, 2)">
+                            <tspan x="50%" text-anchor="middle" class="donut-data">Performance</tspan>
+                        </text>
+                    </g>
+                </svg>
+            </div>
+
+            <div class="svg-item-1">
+                <svg width="70%" height="70%" viewBox="0 0 40 40" class="donut">
+                    <circle class="donut-hole" cx="20" cy="20" r="15.91549430918954" fill="#fff"></circle>
+                    <circle class="donut-ring" cx="20" cy="20" r="15.91549430918954" fill="transparent"
+                        stroke-width="3.5">
+                    </circle>
+                    <circle class="donut-segment donut-segment-2" cx="20" cy="20" r="15.91549430918954"
+                        fill="transparent" stroke-width="3.5" stroke-dasharray="69 31" stroke-dashoffset="25">
+                    </circle>
+                    <g class="donut-text donut-text-1">
+
+                        <text y="50%" transform="translate(0, 2)">
+                            <tspan x="50%" text-anchor="middle" class="donut-percent">70%</tspan>
+                        </text>
+                        <text y="60%" transform="translate(0, 2)">
+                            <tspan x="50%" text-anchor="middle" class="donut-data">Performance</tspan>
+                        </text>
+                    </g>
+                </svg>
+            </div>
+        </td>
+        <td class="box-body">
+            <div class="svg-item-2">
+                <svg width="95%" height="95%" viewBox="0 0 40 40" class="donut">
+                    <circle class="donut-hole" cx="20" cy="20" r="15.91549430918954" fill="#fff"></circle>
+                    <circle class="donut-ring" cx="20" cy="20" r="15.91549430918954" fill="transparent"
+                        stroke-width="3.5">
+                    </circle>
+                    <circle class="donut-segment donut-segment-2" cx="20" cy="20" r="15.91549430918954"
+                        fill="transparent" stroke-width="3.5" stroke-dasharray="69 31" stroke-dashoffset="25">
+                    </circle>
+                    <g class="donut-text donut-text-1">
+
+                        <text y="50%" transform="translate(0, 2)">
+                            <tspan x="50%" text-anchor="middle" class="donut-percent">98%</tspan>
+                        </text>
+                        <text y="60%" transform="translate(0, 2)">
+                            <tspan x="50%" text-anchor="middle" class="donut-data">FPY</tspan>
+                        </text>
+                    </g>
+                </svg>
+            </div>
+        </td>
+        <td class="box-body">
+
+            <div class="svg-item-2">
+                <svg width="95%" height="95%" viewBox="0 0 40 40" class="donut">
+                    <circle class="donut-hole" cx="20" cy="20" r="15.91549430918954" fill="#fff"></circle>
+                    <circle class="donut-ring" cx="20" cy="20" r="15.91549430918954" fill="transparent"
+                        stroke-width="3.5">
+                    </circle>
+                    <circle class="donut-segment donut-segment-2" cx="20" cy="20" r="15.91549430918954"
+                        fill="transparent" stroke-width="3.5" stroke-dasharray="69 31" stroke-dashoffset="25">
+                    </circle>
+                    <g class="donut-text donut-text-1">
+
+                        <text y="50%" transform="translate(0, 2)">
+                            <tspan x="50%" text-anchor="middle" class="donut-percent">88%</tspan>
+                        </text>
+                        <text y="60%" transform="translate(0, 2)">
+                            <tspan x="50%" text-anchor="middle" class="donut-data">Capacity Util</tspan>
+                        </text>
+                    </g>
+                </svg>
+            </div>
+        </td>
+    </tr>
+</table>
+<br>
+
+<!-- <div class="main-class">
+    <div class="box-body">
+        <div class="svg-item">
+            <svg width="95%" height="95%" viewBox="0 0 40 40" class="donut">
+                <circle class="donut-hole" cx="20" cy="20" r="15.91549430918954" fill="#fff"></circle>
+                <circle class="donut-ring" cx="20" cy="20" r="15.91549430918954" fill="transparent" stroke-width="3.5">
+                </circle>
+                <circle class="donut-segment donut-segment-2" cx="20" cy="20" r="15.91549430918954" fill="transparent"
+                    stroke-width="3.5" stroke-dasharray="69 31" stroke-dashoffset="25"></circle>
+                <g class="donut-text donut-text-1">
+
+                    <text y="50%" transform="translate(0, 2)">
+                        <tspan x="50%" text-anchor="middle" class="donut-percent">90%</tspan>
+                    </text>
+                    <text y="60%" transform="translate(0, 2)">
+                        <tspan x="50%" text-anchor="middle" class="donut-data">OEE</tspan>
+                    </text>
+                </g>
+            </svg>
+        </div>
+
+        <div class="svg-item-1">
+            <svg width="70%" height="70%" viewBox="0 0 40 40" class="donut">
+                <circle class="donut-hole" cx="20" cy="20" r="15.91549430918954" fill="#fff"></circle>
+                <circle class="donut-ring" cx="20" cy="20" r="15.91549430918954" fill="transparent" stroke-width="3.5">
+                </circle>
+                <circle class="donut-segment donut-segment-2" cx="20" cy="20" r="15.91549430918954" fill="transparent"
+                    stroke-width="3.5" stroke-dasharray="69 31" stroke-dashoffset="25"></circle>
+                <g class="donut-text donut-text-1">
+
+                    <text y="50%" transform="translate(0, 2)">
+                        <tspan x="50%" text-anchor="middle" class="donut-percent">78%</tspan>
+                    </text>
+                    <text y="60%" transform="translate(0, 2)">
+                        <tspan x="50%" text-anchor="middle" class="donut-data">Availability</tspan>
+                    </text>
+                </g>
+            </svg>
+        </div>
+
+        <div class="svg-item-1">
+            <svg width="70%" height="70%" viewBox="0 0 40 40" class="donut">
+                <circle class="donut-hole" cx="20" cy="20" r="15.91549430918954" fill="#fff"></circle>
+                <circle class="donut-ring" cx="20" cy="20" r="15.91549430918954" fill="transparent" stroke-width="3.5">
+                </circle>
+                <circle class="donut-segment donut-segment-2" cx="20" cy="20" r="15.91549430918954" fill="transparent"
+                    stroke-width="3.5" stroke-dasharray="69 31" stroke-dashoffset="25"></circle>
+                <g class="donut-text donut-text-1">
+
+                    <text y="50%" transform="translate(0, 2)">
+                        <tspan x="50%" text-anchor="middle" class="donut-percent">70%</tspan>
+                    </text>
+                    <text y="60%" transform="translate(0, 2)">
+                        <tspan x="50%" text-anchor="middle" class="donut-data">Performance</tspan>
+                    </text>
+                </g>
+            </svg>
+        </div>
+
+        <div class="svg-item-1">
+            <svg width="70%" height="70%" viewBox="0 0 40 40" class="donut">
+                <circle class="donut-hole" cx="20" cy="20" r="15.91549430918954" fill="#fff"></circle>
+                <circle class="donut-ring" cx="20" cy="20" r="15.91549430918954" fill="transparent" stroke-width="3.5">
+                </circle>
+                <circle class="donut-segment donut-segment-2" cx="20" cy="20" r="15.91549430918954" fill="transparent"
+                    stroke-width="3.5" stroke-dasharray="69 31" stroke-dashoffset="25"></circle>
+                <g class="donut-text donut-text-1">
+
+                    <text y="50%" transform="translate(0, 2)">
+                        <tspan x="50%" text-anchor="middle" class="donut-percent">70%</tspan>
+                    </text>
+                    <text y="60%" transform="translate(0, 2)">
+                        <tspan x="50%" text-anchor="middle" class="donut-data">Performance</tspan>
+                    </text>
+                </g>
+            </svg>
+        </div>
+    </div>
+</div>
+
+<div class="sub-class">
+    <div class="box-body">
+        <div class="svg-item-2">
+            <svg width="70%" height="70%" viewBox="0 0 40 40" class="donut">
+                <circle class="donut-hole" cx="20" cy="20" r="15.91549430918954" fill="#fff"></circle>
+                <circle class="donut-ring" cx="20" cy="20" r="15.91549430918954" fill="transparent" stroke-width="3.5">
+                </circle>
+                <circle class="donut-segment donut-segment-2" cx="20" cy="20" r="15.91549430918954" fill="transparent"
+                    stroke-width="3.5" stroke-dasharray="69 31" stroke-dashoffset="25"></circle>
+                <g class="donut-text donut-text-1">
+
+                    <text y="50%" transform="translate(0, 2)">
+                        <tspan x="50%" text-anchor="middle" class="donut-percent">98%</tspan>
+                    </text>
+                    <text y="60%" transform="translate(0, 2)">
+                        <tspan x="50%" text-anchor="middle" class="donut-data">FPY</tspan>
+                    </text>
+                </g>
+            </svg>
+        </div>
+    </div>
+</div>
+<div class="sub-class-1">
+    <div class="box-body">
+        <div class="svg-item-2">
+            <svg width="70%" height="70%" viewBox="0 0 40 40" class="donut">
+                <circle class="donut-hole" cx="20" cy="20" r="15.91549430918954" fill="#fff"></circle>
+                <circle class="donut-ring" cx="20" cy="20" r="15.91549430918954" fill="transparent" stroke-width="3.5">
+                </circle>
+                <circle class="donut-segment donut-segment-2" cx="20" cy="20" r="15.91549430918954" fill="transparent"
+                    stroke-width="3.5" stroke-dasharray="69 31" stroke-dashoffset="25"></circle>
+                <g class="donut-text donut-text-1">
+
+                    <text y="50%" transform="translate(0, 2)">
+                        <tspan x="50%" text-anchor="middle" class="donut-percent">88%</tspan>
+                    </text>
+                    <text y="60%" transform="translate(0, 2)">
+                        <tspan x="50%" text-anchor="middle" class="donut-data">Capacity Util</tspan>
+                    </text>
+                </g>
+            </svg>
+        </div>
+    </div>
+</div> -->
+<nb-card>
+    <table>
+        <thead class="black white-text">
+            <tr>
+                <th *ngFor="let head of headElements" scope="col">{{head}} </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let el of elements">
+                <td scope="row">{{el.Shift}}</td>
+                <td>{{el.Planned}}</td>
+                <td>{{el.Actuals}}</td>
+                <td>{{el.Prod}}</td>
+                <td>{{el.FPY}}</td>
+                <td>{{el.CapUtil}}</td>
+                <td>{{el.Uptime}}</td>
+                <td>
+                    <span class="control-button update-button" title="Edit" data-toggle="modal" data-ng-click=""
+                        data-target="#editOperatorSkill">
+                        <i class="fas fa-search-alt"></i>
+                    </span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</nb-card>
